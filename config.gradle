@@ -20,7 +20,6 @@ ext{
 
             "appcompat-v7"             : "com.android.support:appcompat-v7:${android["androidSupportSdkVersion"]}",
             "design"                   : "com.android.support:design:${android["androidSupportSdkVersion"]}",
-
             "support-v4"               : "com.android.support:support-v4:${android["androidSupportSdkVersion"]}",
             "annotations"              : "com.android.support:support-annotations:${android["androidSupportSdkVersion"]}",
             "recyclerview-v7"          : "com.android.support:recyclerview-v7:${android["androidSupportSdkVersion"]}",
