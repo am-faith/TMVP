@@ -2,6 +2,9 @@ package com.path2wind.tmvp.mvp;
 
 import android.app.Activity;
 
+import rx.Subscription;
+import rx.subscriptions.CompositeSubscription;
+
 /**
  * @author Terry
  * @time 16/9/19 20:46
@@ -22,9 +25,10 @@ public class BasePresenter<T extends IView> implements IPresenter<T> {
 
     @Override
     public void detachView() {
-        this.mView = iView;
+        this.mView = null;
         unSubscribe();
     }
+
 
     protected void unSubscribe() {
         if (mCompositeSubscription != null) {
@@ -32,11 +36,13 @@ public class BasePresenter<T extends IView> implements IPresenter<T> {
         }
     }
 
+
     protected void addSubscribe(Subscription subscription) {
         if (mCompositeSubscription == null) {
             mCompositeSubscription = new CompositeSubscription();
         }
         mCompositeSubscription.add(subscription);
     }
+
 
 }
